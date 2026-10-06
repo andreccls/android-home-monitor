@@ -28,9 +28,9 @@ data class SimulationConfig(
                 gateActivityEveryMillis = 60_000L..150_000L,
                 gateOpenForMillis = 45_000,
                 gateOutageMillis = 40_000,
-                callEveryMillis = 25_000L..120_000L,
+                callEveryMillis = 40_000L..150_000L,
                 ringTimeoutMillis = 25_000,
-                deviceOutageChance = 0.04,
+                deviceOutageChance = 0.01,
                 deviceOutageMillis = 90_000,
                 frameIntervalMillis = 400,
             )

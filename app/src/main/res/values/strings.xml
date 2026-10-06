@@ -79,7 +79,7 @@
     <string name="gate_action_open_named">Abrir %1$s</string>
     <string name="gate_action_close_named">Fechar %1$s</string>
     <string name="gate_unavailable">Indisponível</string>
-    <string name="gate_since">desde %1$s</string>
+    <string name="gate_since">atualizado %1$s</string>
     <string name="gate_confirm_open_title">Abrir o portão?</string>
     <string name="gate_confirm_close_title">Fechar o portão?</string>
     <string name="gate_confirm_text">%1$s vai receber o comando agora.</string>

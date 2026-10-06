@@ -8,7 +8,7 @@ APP_ID := com.andrecoura.homemonitor
 # Fall back to Android Studio's JDK on macOS when JAVA_HOME is not set.
 ifeq ($(JAVA_HOME),)
   STUDIO_JBR := /Applications/Android Studio.app/Contents/jbr/Contents/Home
-  ifneq ($(wildcard $(STUDIO_JBR)),)
+  ifneq ($(shell test -d "$(STUDIO_JBR)" && echo y),)
     export JAVA_HOME := $(STUDIO_JBR)
   endif
 endif
