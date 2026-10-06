@@ -24,6 +24,7 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
@@ -45,6 +46,19 @@ android {
     testOptions {
         unitTests.isIncludeAndroidResources = true
         unitTests.isReturnDefaultValues = true
+        // Robolectric reflects into JDK internals, which JDK 17+ (we run on 25) closes by default.
+        unitTests.all {
+            it.jvmArgs(
+                "--add-exports=java.base/jdk.internal.access=ALL-UNNAMED",
+                "--add-opens=java.base/java.io=ALL-UNNAMED",
+                "--add-opens=java.base/java.lang=ALL-UNNAMED",
+                "--add-opens=java.base/java.util=ALL-UNNAMED",
+                "--add-opens=java.base/java.net=ALL-UNNAMED",
+                "--add-opens=java.base/java.nio=ALL-UNNAMED",
+                "--add-opens=java.base/java.text=ALL-UNNAMED",
+                "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
+            )
+        }
     }
 }
 
@@ -88,7 +102,45 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.test.runner)
     androidTestImplementation(libs.androidx.test.ext.junit)
+    // Pinned explicitly: the version Compose pulls in breaks on API 37 (InputManager.getInstance was removed).
+    androidTestImplementation(libs.androidx.test.espresso.core)
     androidTestImplementation(libs.hilt.android.testing)
     kspAndroidTest(libs.hilt.compiler)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+}
+
+// Coverage gate: >= 80% of lines in domain, data and view models.
+// Excluded on purpose (see docs/TESTING.md): Compose screens/theme/navigation (covered by instrumented UI tests,
+// which Kover does not measure), Hilt/Room generated code, DI modules, and the Application/Activity entry points.
+kover {
+    reports {
+        filters {
+            excludes {
+                classes(
+                    "*Screen*",
+                    "*ComposableSingletons*",
+                    "com.andrecoura.homemonitor.ui.components.*",
+                    "com.andrecoura.homemonitor.ui.theme.*",
+                    "com.andrecoura.homemonitor.ui.navigation.*",
+                    "com.andrecoura.homemonitor.di.*",
+                    "com.andrecoura.homemonitor.MainActivity*",
+                    "com.andrecoura.homemonitor.HomeMonitorApp*",
+                    "*_Impl*",
+                    "*_Factory*",
+                    "*_HiltModules*",
+                    "*Hilt_*",
+                    "hilt_aggregated_deps.*",
+                    "dagger.hilt.internal.*",
+                    "*.BuildConfig",
+                    "*.R",
+                    "*.R$*",
+                )
+            }
+        }
+        verify {
+            rule("Lines in domain, data and view models") {
+                minBound(80)
+            }
+        }
+    }
 }
