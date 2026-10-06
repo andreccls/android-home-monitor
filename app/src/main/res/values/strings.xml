@@ -13,10 +13,8 @@
     <string name="confirm">Confirmar</string>
     <string name="delete">Excluir</string>
     <string name="save">Salvar</string>
-    <string name="loading">Carregando…</string>
 
     <!-- Home -->
-    <string name="home_title">Minha casa</string>
     <string name="home_section_devices">Dispositivos</string>
     <string name="home_section_gates">Portões</string>
     <string name="home_section_intercom">Interfone</string>
@@ -31,7 +29,6 @@
     <string name="home_simulated_notice">Dados simulados: nenhum dispositivo real está conectado.</string>
 
     <!-- Devices -->
-    <string name="devices_title">Dispositivos</string>
     <string name="devices_filter_all">Todos</string>
     <string name="devices_filter_cameras">Câmeras</string>
     <string name="devices_filter_alexas">Alexas</string>
@@ -71,7 +68,6 @@
     <string name="camera_frame_description">Transmissão simulada da câmera %1$s, quadro %2$d</string>
 
     <!-- Gates -->
-    <string name="gates_title">Portões</string>
     <string name="gates_empty">Nenhum portão encontrado.</string>
     <string name="gate_state_closed">Fechado</string>
     <string name="gate_state_opening">Abrindo</string>
@@ -91,7 +87,6 @@
     <string name="gate_message_failed">O portão não respondeu. Tente de novo.</string>
 
     <!-- Intercom -->
-    <string name="intercom_title">Interfone</string>
     <string name="intercom_active_ringing">Chamada recebida</string>
     <string name="intercom_active_answered">Chamada atendida</string>
     <string name="intercom_answer">Atender</string>
@@ -110,7 +105,6 @@
     <string name="intercom_message_gate_failed">O portão não respondeu. Tente de novo.</string>
 
     <!-- Alerts -->
-    <string name="alerts_title">Alertas</string>
     <string name="alerts_empty">Nenhum alerta por enquanto.</string>
     <string name="alert_gate_left_open">%1$s está aberto há muito tempo</string>
     <string name="alert_device_offline">%1$s ficou offline</string>

@@ -4,4 +4,6 @@
     <issue id="GradleDependency" severity="ignore" />
     <issue id="NewerVersionAvailable" severity="ignore" />
     <issue id="AndroidGradlePluginVersion" severity="ignore" />
+    <!-- The default resources are Portuguese; the Typos check only knows English and flags "comando". -->
+    <issue id="Typos" severity="ignore" />
 </lint>

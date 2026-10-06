@@ -49,7 +49,10 @@ fun CameraViewerScreen(
     Column(Modifier.fillMaxSize().padding(16.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
         when (state) {
             CameraViewerUiState.Connecting -> {
-                Placeholder { CircularProgressIndicator(color = Color.White) }
+                val connecting = stringResource(R.string.camera_connecting)
+                Placeholder {
+                    CircularProgressIndicator(color = Color.White, modifier = Modifier.semantics { contentDescription = connecting })
+                }
             }
 
             is CameraViewerUiState.Live -> {

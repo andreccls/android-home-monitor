@@ -44,10 +44,10 @@ import javax.inject.Singleton
 @Qualifier
 annotation class ApplicationScope
 
-/** Persistence and cross-cutting singletons. Tests replace [PortsModule] only, so Room stays real. */
+/** Room database and DAOs. Instrumented tests swap it for an in-memory database. */
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {
+object DatabaseModule {
     @Provides
     @Singleton
     fun database(
@@ -68,7 +68,11 @@ object AppModule {
     @Provides fun callDao(db: AppDatabase): CallDao = db.callDao()
 
     @Provides fun alertDao(db: AppDatabase): AlertDao = db.alertDao()
+}
 
+@Module
+@InstallIn(SingletonComponent::class)
+object AppModule {
     @Provides fun clock(): Clock = Clock.systemDefaultZone()
 
     @Provides fun policy() = MonitoringPolicy()
@@ -91,12 +95,17 @@ interface RepositoryModule {
     @Binds fun alerts(impl: RoomAlertRepository): AlertRepository
 }
 
+/** How lively the simulated home is. Instrumented tests swap it for an instant, failure-free config. */
+@Module
+@InstallIn(SingletonComponent::class)
+object SimulationModule {
+    @Provides fun config(): SimulationConfig = SimulationConfig.Default
+}
+
 /** The single place where simulators are chosen. A real integration replaces these bindings. */
 @Module
 @InstallIn(SingletonComponent::class)
 object PortsModule {
-    @Provides fun config(): SimulationConfig = SimulationConfig.Default
-
     @Provides
     @Singleton
     fun gateDriver(
