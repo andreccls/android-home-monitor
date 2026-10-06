@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Home Monitor</string>
+
+    <string name="tab_home">Início</string>
+    <string name="tab_devices">Dispositivos</string>
+    <string name="tab_gates">Portões</string>
+    <string name="tab_intercom">Interfone</string>
+    <string name="tab_alerts">Alertas</string>
+
+    <string name="back">Voltar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="confirm">Confirmar</string>
+    <string name="delete">Excluir</string>
+    <string name="save">Salvar</string>
+    <string name="loading">Carregando…</string>
+
+    <!-- Home -->
+    <string name="home_title">Minha casa</string>
+    <string name="home_section_devices">Dispositivos</string>
+    <string name="home_section_gates">Portões</string>
+    <string name="home_section_intercom">Interfone</string>
+    <string name="home_section_alerts">Alertas recentes</string>
+    <string name="home_cameras_online">Câmeras online</string>
+    <string name="home_alexas_online">Alexas online</string>
+    <string name="home_offline">Offline</string>
+    <string name="home_count_of">%1$d de %2$d</string>
+    <string name="home_no_calls">Nenhuma chamada ainda</string>
+    <string name="home_no_alerts">Tudo tranquilo, sem alertas</string>
+    <string name="home_see_all">Ver todos</string>
+    <string name="home_simulated_notice">Dados simulados: nenhum dispositivo real está conectado.</string>
+
+    <!-- Devices -->
+    <string name="devices_title">Dispositivos</string>
+    <string name="devices_filter_all">Todos</string>
+    <string name="devices_filter_cameras">Câmeras</string>
+    <string name="devices_filter_alexas">Alexas</string>
+    <string name="devices_empty">Nenhum dispositivo cadastrado.</string>
+    <string name="devices_add">Adicionar dispositivo</string>
+    <string name="device_kind_camera">Câmera</string>
+    <string name="device_kind_alexa">Alexa</string>
+    <string name="device_status_online">Online</string>
+    <string name="device_status_offline">Offline</string>
+    <string name="device_item_description">%1$s, %2$s, %3$s, %4$s</string>
+    <string name="device_edit">Editar %1$s</string>
+    <string name="device_watch">Ver câmera %1$s</string>
+
+    <string name="form_title_new">Novo dispositivo</string>
+    <string name="form_title_edit">Editar dispositivo</string>
+    <string name="form_name">Nome</string>
+    <string name="form_room">Cômodo</string>
+    <string name="form_type">Tipo</string>
+    <string name="form_address_camera">Endereço do stream (rtsp:// ou http://)</string>
+    <string name="form_address_alexa">Número de série do Echo</string>
+    <string name="form_error_name_required">Informe um nome.</string>
+    <string name="form_error_name_too_long">O nome pode ter no máximo 40 caracteres.</string>
+    <string name="form_error_room_required">Informe o cômodo.</string>
+    <string name="form_error_address_camera">Use um endereço como rtsp://192.168.0.20/stream.</string>
+    <string name="form_error_address_alexa">Use de 6 a 32 letras, números ou hífens.</string>
+    <string name="form_delete_title">Excluir dispositivo?</string>
+    <string name="form_delete_text">Esta ação remove o dispositivo da sua casa.</string>
+
+    <!-- Camera -->
+    <string name="camera_title">Câmera</string>
+    <string name="camera_connecting">Conectando…</string>
+    <string name="camera_no_signal">Sem sinal</string>
+    <string name="camera_no_signal_hint">Não foi possível receber imagens desta câmera.</string>
+    <string name="camera_retry">Tentar de novo</string>
+    <string name="camera_not_found">Câmera não encontrada.</string>
+    <string name="camera_simulated">SIMULADO</string>
+    <string name="camera_frame_description">Transmissão simulada da câmera %1$s, quadro %2$d</string>
+
+    <!-- Gates -->
+    <string name="gates_title">Portões</string>
+    <string name="gates_empty">Nenhum portão encontrado.</string>
+    <string name="gate_state_closed">Fechado</string>
+    <string name="gate_state_opening">Abrindo</string>
+    <string name="gate_state_open">Aberto</string>
+    <string name="gate_state_closing">Fechando</string>
+    <string name="gate_state_offline">Offline</string>
+    <string name="gate_action_open">Abrir</string>
+    <string name="gate_action_close">Fechar</string>
+    <string name="gate_action_open_named">Abrir %1$s</string>
+    <string name="gate_action_close_named">Fechar %1$s</string>
+    <string name="gate_unavailable">Indisponível</string>
+    <string name="gate_since">desde %1$s</string>
+    <string name="gate_confirm_open_title">Abrir o portão?</string>
+    <string name="gate_confirm_close_title">Fechar o portão?</string>
+    <string name="gate_confirm_text">%1$s vai receber o comando agora.</string>
+    <string name="gate_message_sent">Comando enviado.</string>
+    <string name="gate_message_failed">O portão não respondeu. Tente de novo.</string>
+
+    <!-- Intercom -->
+    <string name="intercom_title">Interfone</string>
+    <string name="intercom_active_ringing">Chamada recebida</string>
+    <string name="intercom_active_answered">Chamada atendida</string>
+    <string name="intercom_answer">Atender</string>
+    <string name="intercom_open_gate">Abrir portão</string>
+    <string name="intercom_end_call">Encerrar</string>
+    <string name="intercom_history">Histórico</string>
+    <string name="intercom_history_empty">Nenhuma chamada registrada.</string>
+    <string name="intercom_waiting">Aguardando chamadas…</string>
+    <string name="call_state_ringing">Tocando</string>
+    <string name="call_state_answered">Atendida</string>
+    <string name="call_state_missed">Perdida</string>
+    <string name="intercom_confirm_title">Abrir o portão?</string>
+    <string name="intercom_confirm_text">O portão ligado a %1$s vai abrir agora.</string>
+    <string name="intercom_message_answer_failed">A chamada não está mais tocando.</string>
+    <string name="intercom_message_gate_opening">Abrindo o portão.</string>
+    <string name="intercom_message_gate_failed">O portão não respondeu. Tente de novo.</string>
+
+    <!-- Alerts -->
+    <string name="alerts_title">Alertas</string>
+    <string name="alerts_empty">Nenhum alerta por enquanto.</string>
+    <string name="alert_gate_left_open">%1$s está aberto há muito tempo</string>
+    <string name="alert_device_offline">%1$s ficou offline</string>
+    <string name="alert_missed_call">Chamada perdida em %1$s</string>
+</resources>
