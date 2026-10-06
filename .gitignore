@@ -1,0 +1,22 @@
+# Gradle / build
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+# Machine-specific (SDK path): create with `sdk.dir=...` or export ANDROID_HOME
+local.properties
+# IDE
+*.iml
+.idea/*
+!.idea/codeStyles/
+!.idea/runConfigurations/
+# Secrets
+*.jks
+*.keystore
+*.p12
+keystore.properties
+# OS / tools
+.DS_Store
+*.log
+captures/
+.externalNativeBuild/
+.cxx/
